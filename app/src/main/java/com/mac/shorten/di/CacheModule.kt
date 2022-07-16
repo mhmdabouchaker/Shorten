@@ -29,4 +29,10 @@ object CacheModule {
     fun provideLinkDao(db: AppDatabase): LinkDao{
         return db.linkDao()
     }
+
+    @Singleton
+    @Provides
+    fun provideCacheLinkMapper(): LinkEntityMapper{
+        return LinkEntityMapper()
+    }
 }

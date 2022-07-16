@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder
 import com.mac.shorten.BuildConfig
 import com.mac.shorten.Config
 import com.mac.shorten.network.LinkService
+import com.mac.shorten.network.model.LinkDtoMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,9 +25,7 @@ object NetworkModule {
     @Provides
     fun provideHTTPLoggingInterceptor(): HttpLoggingInterceptor {
         val interceptor = HttpLoggingInterceptor()
-        if (BuildConfig.DEBUG){
-            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-        }
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         return interceptor
     }
 
@@ -47,5 +46,11 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .build()
             .create(LinkService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideLinkMapper(): LinkDtoMapper {
+        return LinkDtoMapper()
     }
 }

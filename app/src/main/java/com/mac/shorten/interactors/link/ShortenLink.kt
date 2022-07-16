@@ -24,37 +24,29 @@ class ShortenLink(
         try {
             emit(DataState.loading())
 
-            val isUrlValid = Patterns.WEB_URL.matcher(url).matches()
-            if (!isUrlValid) {
-                // emit error
-                emit(DataState.error("Please add a valid link"))
-            } else if (TextUtils.isEmpty(url)) {
-                // emit error
-                emit(DataState.error("Please add a link here"))
-            } else {
-                try {
-                    // Convert: NetworkLinkEntity -> Link -> LinkCacheEntity
-                    val networkShortenLink = shortenLinkFromNetwork(url)
-                    // insert into cache
-                    linkDao.insertLink(
-                        // map domain -> entity
-                        entityMapper.mapFromDomainModel(networkShortenLink)
-                    )
-                } catch (e: Exception) {
-                    // there was a network issue
-                    e.printStackTrace()
-                }
-
-                val list = entityMapper.fromEntityList(getAllLinksFromCache())
-                // check if list is not Empty
-                if (list.isNotEmpty()) {
-                    // emit success
-                    emit(DataState.success(list))
-                } else {
-                    // emit list is empty
-                    emit(DataState.empty())
-                }
+            try {
+                // Convert: NetworkLinkEntity -> Link -> LinkCacheEntity
+                val networkShortenLink = shortenLinkFromNetwork(url)
+                // insert into cache
+                linkDao.insertLink(
+                    // map domain -> entity
+                    entityMapper.mapFromDomainModel(networkShortenLink)
+                )
+            } catch (e: Exception) {
+                // there was a network issue
+                e.printStackTrace()
             }
+
+            val list = entityMapper.fromEntityList(getAllLinksFromCache())
+            // check if list is not Empty
+            if (list.isNotEmpty()) {
+                // emit success
+                emit(DataState.success(list))
+            } else {
+                // emit list is empty
+                emit(DataState.empty())
+            }
+
 
         } catch (e: Exception) {
             emit(DataState.error(e.message ?: "Unknown error"))

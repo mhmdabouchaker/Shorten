@@ -5,4 +5,7 @@
     <string name="get_started">Let’s get started!</string>
     <string name="paste_first_link">Paste your first link into the field to shorten it</string>
     <string name="your_link_history">Your Link History</string>
+    <string name="btn_copy">copy</string>
+    <string name="btn_copied">Copied!</string>
+    <string name="error_add_link">Please add a link here</string>
 </resources>

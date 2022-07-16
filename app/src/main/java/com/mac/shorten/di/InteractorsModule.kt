@@ -2,6 +2,8 @@ package com.mac.shorten.di
 
 import com.mac.shorten.cache.LinkDao
 import com.mac.shorten.cache.model.LinkEntityMapper
+import com.mac.shorten.interactors.link.DeleteLink
+import com.mac.shorten.interactors.link.GetLinkList
 import com.mac.shorten.interactors.link.ShortenLink
 import com.mac.shorten.network.LinkService
 import com.mac.shorten.network.model.LinkDtoMapper
@@ -28,5 +30,26 @@ object InteractorsModule {
             entityMapper = entityMapper,
             linkService = linkService,
             linkDtoMapper = linkDtoMapper)
+    }
+
+    @ViewModelScoped
+    @Provides
+    fun provideDeleteLink(
+        linkDao: LinkDao,
+        entityMapper: LinkEntityMapper
+    ): DeleteLink{
+        return DeleteLink(
+            linkDao = linkDao,
+            entityMapper = entityMapper)
+    }
+    @ViewModelScoped
+    @Provides
+    fun provideGetLinkList(
+        linkDao: LinkDao,
+        entityMapper: LinkEntityMapper
+    ): GetLinkList{
+        return GetLinkList(
+            linkDao = linkDao,
+            entityMapper = entityMapper)
     }
 }

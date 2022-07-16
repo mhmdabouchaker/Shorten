@@ -25,7 +25,9 @@ object NetworkModule {
     @Provides
     fun provideHTTPLoggingInterceptor(): HttpLoggingInterceptor {
         val interceptor = HttpLoggingInterceptor()
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+        if (BuildConfig.DEBUG){
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+        }
         return interceptor
     }
 
@@ -40,10 +42,11 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideShortenLinkService(): LinkService{
+    fun provideShortenLinkService(okHttpClient: OkHttpClient): LinkService{
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
+            .client(okHttpClient)
             .build()
             .create(LinkService::class.java)
     }

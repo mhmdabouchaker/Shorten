@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.mac.shorten.domain.data.DataState
 import com.mac.shorten.domain.model.Link
 import com.mac.shorten.interactors.link.DeleteLink
-import com.mac.shorten.interactors.link.GetLinkList
+import com.mac.shorten.interactors.linkList.GetLinkList
 import com.mac.shorten.interactors.link.ShortenLink
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -87,6 +87,8 @@ class LinkActivity : AppCompatActivity() {
                     }
 
                     DataState.Status.ERROR -> {
+                        etShortenLink.text.clear()
+                        showLoading(false)
                         dataState.error.let {
                             Toast.makeText(
                                 this@LinkActivity,

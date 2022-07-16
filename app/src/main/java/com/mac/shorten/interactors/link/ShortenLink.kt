@@ -1,7 +1,5 @@
 package com.mac.shorten.interactors.link
 
-import android.text.TextUtils
-import android.util.Patterns
 import com.mac.shorten.cache.LinkDao
 import com.mac.shorten.cache.model.LinkEntity
 import com.mac.shorten.cache.model.LinkEntityMapper
@@ -34,6 +32,7 @@ class ShortenLink(
                 )
             } catch (e: Exception) {
                 // there was a network issue
+                emit(DataState.error(e.message ?: "error while shorting link"))
                 e.printStackTrace()
             }
 

@@ -1,4 +1,4 @@
-package com.mac.shorten.interactors.link
+package com.mac.shorten.interactors.linkList
 
 import com.mac.shorten.cache.LinkDao
 import com.mac.shorten.cache.model.LinkEntity

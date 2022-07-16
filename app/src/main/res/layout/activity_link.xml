@@ -109,73 +109,83 @@
             app:layout_constraintTop_toBottomOf="@+id/headerTv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/footerParentView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/color_purple">
-
-        <EditText
-            android:id="@+id/etShortenLink"
-            android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="46dp"
-            android:layout_marginEnd="48dp"
-            android:background="@drawable/et_bg"
-            android:gravity="center"
-            android:hint="@string/shorten_link_hint"
-            android:importantForAutofill="no"
-            android:inputType="textUri"
-            android:textColorHint="@color/hint_color_gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <FrameLayout
-            android:id="@+id/flShortenBtn"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/footerParentView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginBottom="46dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etShortenLink">
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_purple">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/shortenBtn"
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:backgroundTint="@color/color_cyan"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:includeFontPadding="false"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:letterSpacing="0"
-                android:paddingLeft="0dp"
-                android:paddingRight="0dp"
-                android:stateListAnimator="@null"
-                android:text="@string/btn_shorten_it"
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:cornerRadius="4dp"
-                app:rippleColor="@android:color/transparent" />
-
-            <ProgressBar
-                android:id="@+id/pbLoading"
+            <ImageView
+                android:id="@+id/ivShape"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:theme="@style/ProgressBarWhite"
-                android:visibility="gone" />
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/bg_short_shape"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="ContentDescription" />
+            <EditText
+                android:id="@+id/etShortenLink"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="46dp"
+                android:layout_marginEnd="48dp"
+                android:background="@drawable/et_bg"
+                android:gravity="center"
+                android:hint="@string/shorten_link_hint"
+                android:importantForAutofill="no"
+                android:inputType="textUri"
+                android:textColorHint="@color/hint_color_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </FrameLayout>
+            <FrameLayout
+                android:id="@+id/flShortenBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="46dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etShortenLink">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/shortenBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:backgroundTint="@color/color_cyan"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:letterSpacing="0"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/btn_shorten_it"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:cornerRadius="4dp"
+                    app:rippleColor="@android:color/transparent" />
+
+                <ProgressBar
+                    android:id="@+id/pbLoading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:theme="@style/ProgressBarWhite"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 </RelativeLayout>

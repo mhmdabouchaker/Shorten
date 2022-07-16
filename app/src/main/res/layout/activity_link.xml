@@ -114,7 +114,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#3B3054">
+        android:background="@color/color_purple">
 
         <EditText
             android:id="@+id/etShortenLink"
@@ -125,10 +125,10 @@
             android:layout_marginEnd="48dp"
             android:background="@drawable/et_bg"
             android:gravity="center"
-            android:textColorHint="@color/hint_color_gray"
             android:hint="@string/shorten_link_hint"
             android:importantForAutofill="no"
             android:inputType="textUri"
+            android:textColorHint="@color/hint_color_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -151,7 +151,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:backgroundTint="@color/color_cyan"
+                android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
+                android:includeFontPadding="false"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:letterSpacing="0"
@@ -160,8 +162,6 @@
                 android:stateListAnimator="@null"
                 android:text="@string/btn_shorten_it"
                 android:textAllCaps="true"
-                android:fontFamily="@font/poppins_bold"
-                android:includeFontPadding="false"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:cornerRadius="4dp"

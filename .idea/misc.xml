@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_footer.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/et_bg.xml" value="0.208" />
         <entry key="app/src/main/res/drawable/et_error_bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_delete.xml" value="0.1" />

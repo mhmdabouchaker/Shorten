@@ -43,12 +43,18 @@ dependencies {
     // android supports
     implementation "androidx.appcompat:appcompat:$versions.appCompat"
     implementation "com.google.android.material:material:$versions.materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayoutVersion"
 
     // architecture components
     implementation "androidx.room:room-runtime:$versions.roomVersion"
     kapt "androidx.room:room-compiler:$versions.roomVersion"
+
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:$versions.roomVersion"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigationFragmentVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.navigationFragmentVersion"
 
     // Hilt
     implementation "com.google.dagger:hilt-android:$versions.hilt"

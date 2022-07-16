@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -51,7 +52,12 @@ class LinkAdapter(
                 )
                 clipboard?.setPrimaryClip(clip)
                 copyBtn.text = binding.root.context.getString(R.string.btn_copied)
-                copyBtn.setBackgroundColor(Color.parseColor("#3B3054"))
+                copyBtn.setBackgroundColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.color_purple
+                    )
+                )
             }
         }
     }

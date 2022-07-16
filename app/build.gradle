@@ -53,7 +53,6 @@ dependencies {
     // Hilt
     implementation "com.google.dagger:hilt-android:$versions.hilt"
     kapt "com.google.dagger:hilt-android-compiler:$versions.hilt"
-    implementation"androidx.hilt:hilt-navigation:$versions.hiltNavigation"
 
     // network
     implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttpVersion"

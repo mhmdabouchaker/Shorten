@@ -29,7 +29,7 @@ class GetLinkListTest {
     }
 
     @Test
-    fun getLinksFromCache_Success(): Unit = runBlocking{
+    fun getLinksFromCache_emitLinksFromCache(): Unit = runBlocking{
         val link = Link("evdI2Q", "https://shrtco.de/evdI2Q", "http://helloworld.com")
 
         // insert fake link to fill in the cache
@@ -48,7 +48,7 @@ class GetLinkListTest {
     }
 
     @Test
-    fun getLinksFromCache_Empty(): Unit = runBlocking {
+    fun getLinksFromCache_emitEmptyCache(): Unit = runBlocking {
 
         // run use case
         val flowItems = getLinkList.run().toList()

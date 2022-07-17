@@ -37,16 +37,8 @@ class ShortenLink(
             }
 
             val list = entityMapper.fromEntityList(getAllLinksFromCache())
-            // check if list is not Empty
-            if (list.isNotEmpty()) {
-                // emit success
-                emit(DataState.success(list))
-            } else {
-                // emit list is empty
-                emit(DataState.empty())
-            }
-
-
+            // emit success
+            emit(DataState.success(list))
         } catch (e: Exception) {
             emit(DataState.error(e.message ?: "Unknown error"))
         }

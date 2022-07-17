@@ -29,7 +29,7 @@ class DeleteLinkTest {
     }
 
     @Test
-    fun deleteLinkFromCache_GetListOfLinks_Success(): Unit = runBlocking {
+    fun deleteLinkFromCache_emitLinksFromCache(): Unit = runBlocking {
         val link1 = Link("evdI2Q", "https://shrtco.de/evdI2Q", "http://helloworld.com")
         // insert fake first link to fill in the cache
         linkDao.insertLink(entityMapper.mapFromDomainModel(link1))
@@ -51,7 +51,7 @@ class DeleteLinkTest {
     }
 
     @Test
-    fun deleteLinkFromCache_GetListOfLinks_Empty(): Unit = runBlocking {
+    fun deleteLinkFromCache_emitEmptyCache(): Unit = runBlocking {
         val link = Link("evdI2Q", "https://shrtco.de/evdI2Q", "http://helloworld.com")
         // insert fake first link to fill in the cache
         linkDao.insertLink(entityMapper.mapFromDomainModel(link))

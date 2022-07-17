@@ -83,9 +83,6 @@ dependencies {
     testImplementation "androidx.arch.core:core-testing:$versions.androidxTest"
     testImplementation "androidx.room:room-testing:$versions.roomVersion"
 
-    // Dependencies for local unit tests
-    testImplementation "org.mockito:mockito-core:$versions.mockitoVersion"
-    // mock extension function
-    testImplementation "io.mockk:mockk:$versions.mockkVersion"
-    testImplementation"org.mockito:mockito-inline:$versions.mockitoInlineVersion"
+    // Mock Server
+    testImplementation "com.squareup.okhttp3:mockwebserver:$versions.mockWebServerVersion"
 }
